@@ -1,0 +1,10 @@
+/macros/
+*.bak
+*.new
+/build*
+/single-build/
+/runtimes/
+*.exe
+*.dll
+purchase-macros.cs
+
