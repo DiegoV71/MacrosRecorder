@@ -6,6 +6,14 @@
 
 MacrosRecorder is a Keysharp script for repeating sequences of clicks, scrolls and keystrokes. It stores separate F-key slots for each application window and shows a compact in-game style overlay.
 
+## Screenshots
+
+The slot overview and recording notice, shown with demo labels and empty slots.
+
+![Macro slot overview](docs/images/macro-slots.png)
+
+![Recording notice](docs/images/recording.png)
+
 ## Use cases
 
 - **WARDOGS loadouts:** record the clicks used to select equipment at the vendor, then replay them when the same shop layout is open.
