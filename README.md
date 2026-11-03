@@ -45,3 +45,18 @@ Coordinate playback depends on the application, screen layout, scaling and input
 
 Windows and Keysharp. The repository provides source, not a standalone executable. For setup and current runtime requirements, consult the Keysharp installation guide above.
 
+
+## Project layout
+
+```text
+src/purchase-macros.ks  Main Keysharp script
+.github/workflows/      CI and release automation
+tests/                  Storage regression check
+macros/                 Local recordings (ignored by Git)
+```
+
+## Releases and development
+
+Download the latest archive from [Releases](../../releases/latest), extract it, and run the script in `src/`. Keep the extracted directory structure intact: recordings are stored in its `macros/` directory.
+
+CI checks the distribution and macro storage on pushes and pull requests. To publish a release, push a version tag such as `v1.0.0`; GitHub Actions packages the script and both READMEs, then creates a release with generated notes. Do not add personal recordings to the repository.

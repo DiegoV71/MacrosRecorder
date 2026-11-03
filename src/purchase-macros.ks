@@ -14,7 +14,7 @@ lastDragY := 0
 playing := false
 cancelPlayback := false
 noticeApp := "APPLICATION"
-macroDir := A_ScriptDir "\macros"
+macroDir := A_ScriptDir "\..\macros"
 DirCreate(macroDir)
 CoordMode("Mouse", "Screen")
 

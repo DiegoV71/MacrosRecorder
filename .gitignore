@@ -8,3 +8,4 @@
 *.dll
 purchase-macros.cs
 
+/src/macros/

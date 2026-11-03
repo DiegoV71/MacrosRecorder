@@ -21,6 +21,9 @@ jobs:
             if (!(Test-Path $file) -or (Get-Item $file).Length -eq 0) { throw "Missing or empty: $file" }
           }
           if (Test-Path macros) { throw 'Personal macros must not be committed' }
+      - name: Verify macro storage
+        shell: pwsh
+        run: ./tests/storage.ps1
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')
