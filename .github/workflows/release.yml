@@ -35,9 +35,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Package distribution
         shell: pwsh
-        run: Compress-Archive -Path src, README.md, README.ru.md -DestinationPath MacrosRecorder.zip
+        run: Copy-Item src/purchase-macros.ks purchase-macros.ks
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
-        run: gh release create "${{ github.ref_name }}" MacrosRecorder.zip --generate-notes
+        run: gh release create "${{ github.ref_name }}" purchase-macros.ks --generate-notes

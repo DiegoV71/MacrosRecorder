@@ -14,7 +14,8 @@ lastDragY := 0
 playing := false
 cancelPlayback := false
 noticeApp := "APPLICATION"
-macroDir := A_ScriptDir "\..\macros"
+SplitPath(A_ScriptDir, &scriptDirName, &scriptParent)
+macroDir := (scriptDirName = "src" ? scriptParent : A_ScriptDir) "\macros"
 DirCreate(macroDir)
 CoordMode("Mouse", "Screen")
 

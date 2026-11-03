@@ -57,6 +57,6 @@ macros/                 Local recordings (ignored by Git)
 
 ## Releases and development
 
-Download the latest archive from [Releases](../../releases/latest), extract it, and run the script in `src/`. Keep the extracted directory structure intact: recordings are stored in its `macros/` directory.
+Download `purchase-macros.ks` from [Releases](../../releases/latest) and run it with Keysharp. Recordings are stored in a `macros/` folder next to the downloaded script.
 
-CI checks the distribution and macro storage on pushes and pull requests. To publish a release, push a version tag such as `v1.0.0`; GitHub Actions packages the script and both READMEs, then creates a release with generated notes. Do not add personal recordings to the repository.
+CI checks the distribution and macro storage on pushes and pull requests. To publish a release, push a version tag such as `v1.0.0`; GitHub Actions uploads the standalone script and creates a release with generated notes. Do not add personal recordings to the repository.
