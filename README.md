@@ -15,7 +15,7 @@ MacrosRecorder is a Keysharp script for repeating sequences of clicks, scrolls a
 ## Get started
 
 1. Install [Keysharp](https://keysharp-org.github.io/KeysharpDocs/howto/Install.htm) on Windows.
-2. Download `purchase-macros.ks` and run it with Keysharp.
+2. Download `src/purchase-macros.ks` and run it with Keysharp.
 3. Open the target application. Press **Ctrl + F1** to start recording; perform the actions; press **Ctrl + F1** again to save.
 4. Return to the same screen and press **Shift + F1** to replay. Use F1–F12 for separate slots.
 
