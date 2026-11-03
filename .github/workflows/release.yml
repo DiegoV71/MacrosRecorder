@@ -17,7 +17,7 @@ jobs:
       - name: Check distribution files
         shell: pwsh
         run: |
-          foreach ($file in @('purchase-macros.ks', 'README.md', 'README.ru.md')) {
+          foreach ($file in @('src/purchase-macros.ks', 'README.md', 'README.ru.md')) {
             if (!(Test-Path $file) -or (Get-Item $file).Length -eq 0) { throw "Missing or empty: $file" }
           }
           if (Test-Path macros) { throw 'Personal macros must not be committed' }
@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Package distribution
         shell: pwsh
-        run: Compress-Archive -Path purchase-macros.ks, README.md, README.ru.md -DestinationPath MacrosRecorder.zip
+        run: Compress-Archive -Path src, README.md, README.ru.md -DestinationPath MacrosRecorder.zip
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
