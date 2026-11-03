@@ -14,7 +14,7 @@ MacrosRecorder — скрипт Keysharp с отдельными слотами 
 ## Быстрый старт
 
 1. Установите [Keysharp](https://keysharp-org.github.io/KeysharpDocs/howto/Install.htm) для Windows.
-2. Скачайте и запустите `purchase-macros.ks` через Keysharp.
+2. Скачайте и запустите `src/purchase-macros.ks` через Keysharp.
 3. Откройте нужное приложение, нажмите **Ctrl + F1**, выполните действия и снова нажмите **Ctrl + F1**.
 4. Вернитесь к тому же экрану и нажмите **Shift + F1**. Другие слоты работают аналогично.
 
