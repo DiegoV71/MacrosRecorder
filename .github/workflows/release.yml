@@ -1,0 +1,40 @@
+name: CI and release
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check distribution files
+        shell: pwsh
+        run: |
+          foreach ($file in @('purchase-macros.ks', 'README.md', 'README.ru.md')) {
+            if (!(Test-Path $file) -or (Get-Item $file).Length -eq 0) { throw "Missing or empty: $file" }
+          }
+          if (Test-Path macros) { throw 'Personal macros must not be committed' }
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: validate
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package distribution
+        shell: pwsh
+        run: Compress-Archive -Path purchase-macros.ks, README.md, README.ru.md -DestinationPath MacrosRecorder.zip
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: gh release create "${{ github.ref_name }}" MacrosRecorder.zip --generate-notes
